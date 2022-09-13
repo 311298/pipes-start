@@ -1,0 +1,24 @@
+    npm install --save rxjs@6
+    npm install --save rxjs-compat
+
+1) in html file inside the {{ variable | uppercase }} -> for formatting the string into uppercase
+in html file inside the {{ variable | date }} -> for formatting the date into readable format
+
+2)date:'fullDate'
+
+3)official documentation for angular pipes
+
+4)applying multiple pipes -> variable | pipe1 | pipe2 ; pipes operates from left to right
+
+5)custom pipe ;
+create a file name fileName.pipe.ts ; export class FileName implements PipeTransform{ transform(value:any) { } }
+now the above value we can perform the operation as we please ; also add @Pipe({ name: 'pipeName' })
+and declare it inside the declaration array of app.module.ts and use it using the pipeName inside html
+
+6)adding muliple paramater inside the custom pipe ;
+simply pass the paramter inside the transform function transform( value:any, limit:number ){ }
+now inside the html ; {{ variable | pipeName : limit }}
+
+7)check filter.pipe.ts -> example for creating filter pipe
+
+8)pure:false -> applies whenever value changes inside the page
