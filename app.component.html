@@ -6,6 +6,9 @@
       <button (click)="onAddServer()">add server</button>
       <br /><br />
       <h2>app status:{{ appStatus | async }}</h2>
+
+      <!--  as we know that value of appStatus comes from the synchronous code and there after some time it will not rendere, therefore we need to tell angular using the async pipe -->
+
       <ul class="list-group">
         <li
           class="list-group-item"
