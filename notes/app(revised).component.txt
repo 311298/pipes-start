@@ -1,0 +1,51 @@
+section : angular-pipes
+
+============================================================================================
+
+242. using pipes
+
+pipes are only use to transform the output. Therefore used in template.
+
+{{ variable | uppercase }}
+without changing the property, we chnage the way how property looks,
+
+{{ datevariable | date }}
+for the format the date in readable format
+
+243. parameterizing the pipes
+
+datevariable | date:'fullDate'
+
+so in order to pass the parameter we will give the colon(:) and then parameter and if we need the another parameter, then simply another colon after the first parameter.
+
+244. where to learn more about the pipes
+
+https://angular.io/guide/pipes
+
+245. chaining the pipes
+
+{{ variable | pipe1 | pipe2 ...... }}
+
+operation is happening the left to right therefore pipe1 operates first then pipe2
+
+246. creating the custom pipes
+
+create a pipe which will shorten the string output
+
+steps:
+1. create a descriptive(name) pipe file and use the export key word
+2. implements PipeTransform
+3. add the transform method -> to resolve the error (just like the oninit)
+4. but the transform method takes the paramater
+5. transform(value:any){
+    return value.substr(0,10)
+}
+6. add filter component inside declaration array in app.module.ts 
+7. add the @Pipe({
+    name:'shortend'
+})
+inside the pipe file
+8.{{variable | shortend}}
+
+above example is very simple implementation of custom pipe and we do many more thing shown in file shortend.pipe.ts and filter.pipe.ts
+
